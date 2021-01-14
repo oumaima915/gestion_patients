@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    {{ form_start(form) }}
+
+<div class="form-group">
+{{ form_row(form.dateseance,{'attr':{'placeholder':'date ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+{{ form_row(form.soin,{'attr':{'placeholder':'soin ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+{{ form_row(form.patient,{'attr':{'placeholder':'patient ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Enregistrer</button>
+</div>
+{{ form_end(form) }}
+</div>
+{{ form_end(form) }}

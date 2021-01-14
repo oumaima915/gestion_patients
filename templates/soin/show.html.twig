@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Soin{% endblock %}
+
+{% block body %}
+    <h1> Soin</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ soin.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ soin.titre }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ soin.designation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('soin_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('soin_edit', {'id': soin.id}) }}">Modifier</a>
+
+    {{ include('soin/_delete_form.html.twig') }}
+{% endblock %}

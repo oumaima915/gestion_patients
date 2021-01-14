@@ -1,0 +1,29 @@
+{{ form_start(form) }}
+    {{ form_start(form) }}
+
+<div class="form-group">
+{{ form_row(form.nom,{'attr':{'placeholder':'nom ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+{{ form_row(form.prenom,{'attr':{'placeholder':'prenom ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+{{ form_row(form.email,{'attr':{'placeholder':'email ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+{{ form_row(form.password,{'attr':{'placeholder':'password ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+{{ form_row(form.telephone,{'label':'telephone','attr':{'placeholder':'Tell ...','class':'form-control'} }) }}
+</div>
+<div class="form-group">
+{{ form_row(form.adresse,{'label':'adresse','attr':{'placeholder':'adresse...','class':'form-control'} }) }}
+</div>
+
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Enregistrer</button>
+</div>
+{{ form_end(form) }}
+</div>
+   
+{{ form_end(form) }}

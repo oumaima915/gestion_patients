@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer seance{% endblock %}
+
+{% block body %}
+    <h1>Gérer seance</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dateseance</th>
+                <th>actions</th>
+                <td>soin</td>
+                <td>patient</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seance in seances %}
+            <tr>
+                <td>{{ seance.id }}</td>
+                <td>{{ seance.dateseance ? seance.dateseance|date('Y-m-d') : '' }}</td>
+                <td>{{ seance.soin }}</td>
+                <td>{{ seance.patient }}</td>
+                <td>
+                    <a href="{{ path('seance_show', {'id': seance.id}) }}">Afficher</a>
+                    <a href="{{ path('seance_edit', {'id': seance.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('seance_new') }}">Ajouter seance</a>
+{% endblock %}

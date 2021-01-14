@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer soin{% endblock %}
+
+{% block body %}
+    <h1>Gérer soin</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Designation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for soin in soins %}
+            <tr>
+                <td>{{ soin.id }}</td>
+                <td>{{ soin.titre }}</td>
+                <td>{{ soin.designation }}</td>
+                <td>
+                    <a href="{{ path('soin_show', {'id': soin.id}) }}">Afficher</a>
+                    <a href="{{ path('soin_edit', {'id': soin.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('soin_new') }}">Ajouter un soin</a>
+{% endblock %}
